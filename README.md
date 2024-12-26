@@ -39,9 +39,13 @@ To use usbipd, you'll need to install it in PowerShell:
 Then run 'usbipd list' to list your USB devices. After that, you'll need to use your USB device BUSID to get it bound and attached. For example, for this case:
 
 BUSID  VID:PID    DEVICE                                                        STATE
+
 2-1    04d9:1503  Dispositivo de Entrada USB                                    Not shared
+
 2-8    046d:c077  Dispositivo de Entrada USB                                    Not shared
+
 2-14   1b3f:2247  GENERAL WEBCAM                                                Not shared
+
 2-19   0bc2:ab24  Dispositivo de Armazenamento em Massa UAS (USB Attached S...  Not shared
 
 I would need to run 'usbipd bind --busid 2-14' on a Admin privileged PowerShell to bind it and then run 'usbipd attach --wsl Ubuntu-22.04 --busid 2-14' to attach it to USB/IP, which will make it usable in WSL.
@@ -49,9 +53,13 @@ I would need to run 'usbipd bind --busid 2-14' on a Admin privileged PowerShell 
 It should look like this after attached:
 
 BUSID  VID:PID    DEVICE                                                        STATE
+
 2-1    04d9:1503  Dispositivo de Entrada USB                                    Not shared
+
 2-8    046d:c077  Dispositivo de Entrada USB                                    Not shared
+
 2-14   1b3f:2247  GENERAL WEBCAM                                                Attached
+
 2-19   0bc2:ab24  Dispositivo de Armazenamento em Massa UAS (USB Attached S...  Not shared
 
 After following PINTO0309's instructions, you should get your webcam working. Keep in mind that this will only work for external webcams and that some webcams may not be supported.
